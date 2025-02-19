@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: white;
+  padding: 20px;
+}
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__mobile-icon {
+  font-size: 1.5rem;
+}
+.header__navigation {
+  display: none;
+}
+.header__list {
+  display: flex;
+  list-style: none;
+  gap: 45px;
+}
+.header__list-anchor {
+  text-decoration: none;
+  font-family: "Montserrat", serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: black;
+}
+.header__list-anchor:hover {
+  color: #8447e9;
+}
+.header__contactus-anchor {
+  display: none;
+  border: 1px solid;
+  padding: 12px 30px;
+  background-color: #8447e9;
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", serif;
+}
+.header__contactus-anchor:hover {
+  background-color: #955cf0;
+}
+
+@media (min-width: 1024px) {
+  .header__mobile-icon {
+    display: none;
+  }
+  .header__navigation {
+    display: block;
+  }
+  .header__contactus-anchor {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .header__list-anchor {
+    font-size: 1rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
