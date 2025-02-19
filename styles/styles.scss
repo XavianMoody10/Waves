@@ -479,3 +479,143 @@
 }
 
 // -----------------------------------------------------------------------------------------
+
+.projects {
+  background-color: #8447e9;
+  padding: 150px 20px;
+
+  &__header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+  &__mini-subheading {
+    color: white;
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+  }
+
+  &__subheading {
+    font-size: 1.5rem;
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 40px 0;
+    margin: 60px auto 0 auto;
+    max-width: 1500px;
+    position: relative;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  &__name {
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  &__category {
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+    color: rgb(174, 174, 174);
+    font-size: 0.8rem;
+  }
+
+  &__projects-btn {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-family: "Montserrat", serif;
+    width: fit-content;
+    border: 1px solid white;
+
+    &:hover {
+      background-color: white;
+      color: #8447e9;
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .projects__subheading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .projects__projects-btn {
+    margin: 0;
+    position: absolute;
+    bottom: -150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .projects__mini-subheading {
+    font-size: 1.3rem;
+  }
+
+  .projects__grid {
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+    padding: 150px 20px 300px 20px;
+  }
+
+  .projects__header {
+    text-align: start;
+  }
+
+  .projects__subheading {
+    text-align: start;
+    margin: 0;
+    font-size: 2.5rem;
+    max-width: 900px;
+  }
+
+  .projects__name {
+    font-size: 1.5rem;
+  }
+
+  .projects__category {
+    font-size: 1rem;
+  }
+
+  .projects__projects-btn {
+    left: 0;
+    bottom: -150px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .projects__projects-btn {
+    left: 0;
+    bottom: -150px;
+  }
+}
