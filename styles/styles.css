@@ -55,6 +55,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 }
 .header__wrapper {
   display: flex;
@@ -129,6 +130,7 @@
   max-width: 700px;
 }
 .hero__heading span {
+  color: #8447e9;
   position: relative;
 }
 .hero__ctas {

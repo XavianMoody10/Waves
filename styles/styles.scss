@@ -62,6 +62,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10;
 
   &__wrapper {
     display: flex;
@@ -152,6 +153,7 @@
     max-width: 700px;
 
     & span {
+      color: #8447e9;
       position: relative;
     }
   }
