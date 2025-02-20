@@ -478,6 +478,9 @@
   }
 }
 @media (min-width: 640px) {
+  .projects {
+    padding: 150px 20px 300px 20px;
+  }
   .projects__projects-btn {
     margin: 0;
     position: absolute;
@@ -494,9 +497,6 @@
   }
 }
 @media (min-width: 1024px) {
-  .projects {
-    padding: 150px 20px 300px 20px;
-  }
   .projects__header {
     text-align: start;
   }
@@ -521,6 +521,175 @@
   .projects__projects-btn {
     left: 0;
     bottom: -150px;
+  }
+}
+.testimony {
+  padding: 50px 20px;
+}
+.testimony__subheading {
+  font-size: 1.5rem;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.testimony__wrapper {
+  max-width: 1500px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: rgba(133, 71, 233, 0.3137254902);
+  padding: 15px;
+  position: relative;
+}
+.testimony__image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.testimony__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.testimony__statement {
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+}
+.testimony__name {
+  font-family: "Montserrat", serif;
+  font-size: 0.9rem;
+  color: #8447e9;
+  font-weight: 500;
+}
+.testimony__occupation {
+  font-family: "Montserrat", serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.testimony__occupation span {
+  font-weight: 400;
+}
+.testimony__wavy-line {
+  position: absolute;
+  right: 15px;
+  height: 90%;
+  width: 20px;
+  display: none;
+}
+
+.wavy-line-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+}
+.wavy-line-vertical__line {
+  background-image: url("/assets/vertical-wavy-line.svg");
+  background-position: bottom;
+  background-size: auto;
+  background-repeat: repeat-y;
+  width: 100%;
+  height: 1400px;
+  animation: vertical-wavy-line-animation 10s linear infinite;
+}
+
+@keyframes vertical-wavy-line-animation {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-75%);
+  }
+}
+@media (min-width: 500px) {
+  .testimony__subheading {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 640px) {
+  .testimony__wrapper {
+    padding: 25px;
+  }
+  .testimony__statement {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 800px) {
+  .testimony__image {
+    height: 250px;
+    width: 250px;
+  }
+  .testimony__wrapper {
+    padding: 80px 40px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .testimony__statement {
+    max-width: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .testimony {
+    padding: 150px 20px;
+  }
+  .testimony__wrapper {
+    margin-top: 100px;
+    gap: 50px;
+  }
+  .testimony__subheading {
+    text-align: start;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    max-width: 1500px;
+  }
+  .testimony__body {
+    gap: 40px;
+  }
+  .testimony__statement {
+    font-size: 1.3rem;
+    max-width: 550px;
+  }
+  .testimony__name {
+    font-size: 1rem;
+  }
+  .testimony__occupation {
+    font-size: 0.9rem;
+  }
+  .testimony__wavy-line {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .testimony__image {
+    height: 350px;
+    width: 350px;
+  }
+  .testimony__body {
+    gap: 40px;
+  }
+  .testimony__statement {
+    font-size: 1.7rem;
+    max-width: 650px;
+  }
+  .testimony__name {
+    font-size: 1rem;
+  }
+  .testimony__occupation {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1280px) {
+  .testimony__wrapper {
+    justify-content: center;
   }
 }
 
