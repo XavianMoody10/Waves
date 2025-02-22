@@ -1,3 +1,3 @@
 # Waves
 
-Responsive Digital Agency Website (Community) made with HTML and SCSS
+Responsive Digital Agency Website (Community) made with HTML, SCSS, and JavaScript
