@@ -1,0 +1,22 @@
+@use "../abstracts/" as *;
+
+@mixin project {
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  &__name {
+    font-family: $primary-font;
+    font-weight: 600;
+    color: white;
+  }
+
+  &__category {
+    font-family: $primary-font;
+    font-weight: 600;
+    color: rgb(174, 174, 174);
+  }
+}

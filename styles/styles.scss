@@ -1,13 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@use "abstracts" as *;
+@use "base";
+@use "components";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+// Font sizes
+.text-xl {
+  @include base.text-xl;
+}
+
+.text-lg {
+  @include base.text-lg;
+}
+
+.text-md {
+  @include base.text-md;
+}
+
+.text-sm {
+  @include base.text-sm;
+}
+
+.text-xs {
+  @include base.text-xs;
+}
+
+// Buttons
+.btn {
+  @include components.btn;
+}
+
+.btn--purple {
+  @include components.btn--purple;
+}
+
+.btn--purple-outline {
+  @include components.btn--purple-outline;
+}
+
+.btn--white-outline {
+  @include components.btn--white-outline;
 }
 
 // Resuable
-
 .wavy-line {
   position: absolute;
   top: 0;
@@ -86,13 +119,13 @@
 
   &__list-anchor {
     text-decoration: none;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-size: 0.9rem;
     font-weight: 500;
     color: black;
 
     &:hover {
-      color: #8447e9;
+      color: $purple;
     }
   }
 
@@ -101,10 +134,10 @@
     align-items: center;
     gap: 10px;
     padding: 13px 30px;
-    background-color: #8447e9;
+    background-color: $purple;
     color: white;
     text-decoration: none;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
 
     &:hover {
       background-color: #955cf0;
@@ -147,13 +180,12 @@
 
   &__heading {
     text-align: center;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 600;
-    font-size: 2rem;
     max-width: 700px;
 
     & span {
-      color: #8447e9;
+      color: $purple;
       position: relative;
     }
   }
@@ -163,21 +195,6 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
-  }
-
-  &__services-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 30px;
-    background-color: #8447e9;
-    color: white;
-    text-decoration: none;
-    font-family: "Montserrat", serif;
-
-    &:hover {
-      background-color: #955cf0;
-    }
   }
 
   &__reel-btn {
@@ -195,17 +212,7 @@
   }
 }
 
-@media (min-width: 500px) {
-  .hero__heading {
-    font-size: 2.5rem;
-  }
-}
-
 @media (min-width: 640px) {
-  .hero__heading {
-    font-size: 3rem;
-  }
-
   .hero {
     gap: 60px;
   }
@@ -213,18 +220,6 @@
   .hero__ctas {
     flex-direction: row;
     gap: 45px;
-  }
-}
-
-@media (min-width: 640px) {
-  .hero__heading {
-    font-size: 3.5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero__heading {
-    font-size: 4rem;
   }
 }
 
@@ -237,76 +232,19 @@
   padding-bottom: 200px;
 
   &__subheading {
-    font-size: 1.5rem;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 500;
     text-align: center;
     max-width: 600px;
     margin: 0 auto;
   }
 
-  &__wrapper {
-    width: 100%;
-    overflow-x: hidden;
-    max-width: 1500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  &__track-left,
-  &__track-right {
-    display: flex;
-    gap: 20px;
-    width: 3000px;
-  }
-
-  &__track-right {
-    animation: sponsors-right-animation 8s forwards infinite linear;
-  }
-
-  &__track-left {
-    animation: sponsors-left-animation 8s forwards infinite linear;
-  }
-
-  &__sponsor {
-    border: 2px solid rgb(185, 185, 185);
-    border-radius: 5px;
-    padding: 10px;
-  }
-}
-
-@media (min-width: 500px) {
-  .sponsors__subheading {
-    font-size: 1.8rem;
-  }
+  @include components.sponsors-slider;
 }
 
 @media (min-width: 1024px) {
   .sponsors__subheading {
-    font-size: 2.5rem;
     max-width: 800px;
-  }
-}
-
-@keyframes sponsors-right-animation {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes sponsors-left-animation {
-  from {
-    transform: translateX(-50%);
-  }
-
-  to {
-    transform: translateX(0);
   }
 }
 
@@ -325,14 +263,13 @@
   }
 
   &__mini-subheading {
-    color: #8447e9;
-    font-family: "Montserrat", serif;
+    color: $purple;
+    font-family: $primary-font;
     font-weight: 600;
   }
 
   &__subheading {
-    font-size: 1.5rem;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 500;
     text-align: center;
     max-width: 500px;
@@ -350,66 +287,10 @@
     position: relative;
   }
 
-  &__main-point {
-    font-size: 1.5rem;
-    font-weight: 500;
-    font-family: "Montserrat", serif;
-    color: #8447e9;
-  }
-
-  &__service {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  &__details {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  &__info {
-    font-size: 0.9rem;
-    font-family: "Montserrat", serif;
-  }
-
-  &__anchor {
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-family: "Montserrat", serif;
-    font-weight: 500;
-    color: black;
-    width: fit-content;
-    position: relative;
-    margin: 0 auto;
-  }
+  @include components.service;
 
   &__services-btn {
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 30px;
-    background-color: white;
-    color: #8447e9;
-    text-decoration: none;
-    font-family: "Montserrat", serif;
-    width: fit-content;
-    border: 1px solid #8447e9;
-
-    &:hover {
-      background-color: #955cf0;
-      color: white;
-    }
-  }
-}
-
-@media (min-width: 500px) {
-  .services__subheading {
-    font-size: 1.8rem;
   }
 }
 
@@ -427,12 +308,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .services__mini-subheading {
-    font-size: 1.3rem;
-  }
-}
-
 @media (min-width: 1024px) {
   .services__header {
     text-align: start;
@@ -441,25 +316,12 @@
   .services__subheading {
     text-align: start;
     margin: 0;
-    font-size: 2.5rem;
     max-width: 800px;
   }
 
   .services__grid {
     gap: 60px 25px;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .services__service {
-    align-items: flex-start;
-  }
-
-  .services__details {
-    text-align: start;
-  }
-
-  .services__anchor {
-    margin: 0;
   }
 
   .services__services-btn {
@@ -471,7 +333,6 @@
 @media (min-width: 1280px) {
   .services__grid {
     gap: 60px 25px;
-    grid-template-columns: repeat(4, 1fr);
   }
 
   .services__services-btn {
@@ -480,10 +341,16 @@
   }
 }
 
+@media (min-width: 1350px) {
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 // -----------------------------------------------------------------------------------------
 
 .projects {
-  background-color: #8447e9;
+  background-color: $purple;
   padding: 150px 20px;
 
   &__header {
@@ -497,13 +364,12 @@
 
   &__mini-subheading {
     color: white;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 600;
   }
 
   &__subheading {
-    font-size: 1.5rem;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 500;
     color: white;
     text-align: center;
@@ -519,50 +385,10 @@
     position: relative;
   }
 
-  &__details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-
-  &__name {
-    font-family: "Montserrat", serif;
-    font-weight: 600;
-    color: white;
-    font-size: 1.1rem;
-  }
-
-  &__category {
-    font-family: "Montserrat", serif;
-    font-weight: 600;
-    color: rgb(174, 174, 174);
-    font-size: 0.8rem;
-  }
+  @include components.project;
 
   &__projects-btn {
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 20px 30px;
-    background-color: transparent;
-    color: white;
-    text-decoration: none;
-    font-family: "Montserrat", serif;
-    width: fit-content;
-    border: 1px solid white;
-
-    &:hover {
-      background-color: white;
-      color: #8447e9;
-    }
-  }
-}
-
-@media (min-width: 500px) {
-  .projects__subheading {
-    font-size: 1.8rem;
   }
 }
 
@@ -597,16 +423,7 @@
   .projects__subheading {
     text-align: start;
     margin: 0;
-    font-size: 2.5rem;
     max-width: 900px;
-  }
-
-  .projects__name {
-    font-size: 1.5rem;
-  }
-
-  .projects__category {
-    font-size: 1rem;
   }
 
   .projects__projects-btn {
@@ -628,132 +445,14 @@
   padding: 50px 20px;
 
   &__subheading {
-    font-size: 1.5rem;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 500;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
   }
 
-  &__wrapper {
-    max-width: 1500px;
-    margin: 40px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    background-color: #8547e950;
-    padding: 15px;
-    position: relative;
-  }
-
-  &__image {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 100%;
-    margin: 0 auto;
-    display: block;
-  }
-
-  &__body {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  &__statement {
-    font-family: "Montserrat", serif;
-    font-weight: 500;
-  }
-
-  &__name {
-    font-family: "Montserrat", serif;
-    font-size: 0.9rem;
-    color: #8447e9;
-    font-weight: 500;
-  }
-
-  &__occupation {
-    font-family: "Montserrat", serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-
-    & span {
-      font-weight: 400;
-    }
-  }
-
-  &__wavy-line {
-    position: absolute;
-    right: 15px;
-    height: 90%;
-    width: 20px;
-    display: none;
-  }
-}
-
-.wavy-line-vertical {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: hidden;
-
-  &__line {
-    background-image: url("/assets/vertical-wavy-line.svg");
-    background-position: bottom;
-    background-size: auto;
-    background-repeat: repeat-y;
-    width: 100%;
-    height: 1400px;
-    animation: vertical-wavy-line-animation 10s linear infinite;
-  }
-}
-
-@keyframes vertical-wavy-line-animation {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-75%);
-  }
-}
-
-@media (min-width: 500px) {
-  .testimony__subheading {
-    font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 640px) {
-  .testimony__wrapper {
-    padding: 25px;
-  }
-
-  .testimony__statement {
-    font-size: 1.2rem;
-  }
-}
-
-@media (min-width: 800px) {
-  .testimony__image {
-    height: 250px;
-    width: 250px;
-  }
-
-  .testimony__wrapper {
-    padding: 80px 40px;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .testimony__statement {
-    max-width: 500px;
-  }
+  @include components.testimony;
 }
 
 @media (min-width: 1024px) {
@@ -761,67 +460,10 @@
     padding: 150px 20px;
   }
 
-  .testimony__wrapper {
-    margin-top: 100px;
-    gap: 50px;
-  }
-
   .testimony__subheading {
     text-align: start;
     margin: 0 auto;
-    font-size: 2.5rem;
     max-width: 1500px;
-  }
-
-  .testimony__body {
-    gap: 40px;
-  }
-
-  .testimony__statement {
-    font-size: 1.3rem;
-    max-width: 550px;
-  }
-
-  .testimony__name {
-    font-size: 1rem;
-  }
-
-  .testimony__occupation {
-    font-size: 0.9rem;
-  }
-
-  .testimony__wavy-line {
-    display: block;
-  }
-}
-
-@media (min-width: 1200px) {
-  .testimony__image {
-    height: 350px;
-    width: 350px;
-  }
-
-  .testimony__body {
-    gap: 40px;
-  }
-
-  .testimony__statement {
-    font-size: 1.7rem;
-    max-width: 650px;
-  }
-
-  .testimony__name {
-    font-size: 1rem;
-  }
-
-  .testimony__occupation {
-    font-size: 0.9rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .testimony__wrapper {
-    justify-content: center;
   }
 }
 
@@ -831,8 +473,7 @@
   padding: 0px 20px 400px 20px;
 
   &__subheading {
-    font-size: 1.5rem;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 500;
     text-align: center;
     max-width: 800px;
@@ -849,32 +490,7 @@
     position: relative;
   }
 
-  &__blog {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  &__details {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  &__info {
-    font-family: "Montserrat", serif;
-    color: #8447e9;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-  }
-
-  &__title {
-    font-family: "Montserrat", serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-  }
+  @include components.blog;
 
   &__blogs-btn {
     margin: 0 auto;
@@ -883,22 +499,16 @@
     gap: 10px;
     padding: 20px 30px;
     background-color: transparent;
-    color: #8447e9;
+    color: $purple;
     text-decoration: none;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     width: fit-content;
-    border: 1px solid #8447e9;
+    border: 1px solid $purple;
 
     &:hover {
       background-color: white;
-      color: #8447e9;
+      color: $purple;
     }
-  }
-}
-
-@media (min-width: 500px) {
-  .blogs__subheading {
-    font-size: 1.8rem;
   }
 }
 
@@ -907,14 +517,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 60px auto 0 auto;
-  }
-
-  .blogs__blog {
-    max-width: none;
-  }
-
-  .blogs__details {
-    margin-top: 40px;
   }
 
   .blogs__blogs-btn {
@@ -930,7 +532,6 @@
   .blogs__subheading {
     text-align: start;
     margin: 0 auto;
-    font-size: 2.5rem;
     max-width: 1700px;
   }
 
@@ -953,12 +554,6 @@
     height: fit-content;
     bottom: -150px;
     left: 0;
-  }
-}
-
-@media (min-width: 1500px) {
-  .blogs__title {
-    font-size: 1.6rem;
   }
 }
 
@@ -1015,25 +610,14 @@
     color: white;
     z-index: 10;
     position: relative;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
     font-weight: 500;
     text-align: center;
   }
 
   &__contact-btn {
-    align-items: center;
-    gap: 10px;
-    padding: 13px 30px;
-    background-color: #8447e9;
-    color: white;
-    text-decoration: none;
-    font-family: "Montserrat", serif;
     z-index: 1;
     position: relative;
-
-    &:hover {
-      background-color: #955cf0;
-    }
   }
 
   &__bottom {
@@ -1068,7 +652,7 @@
   &__anchor {
     text-decoration: none;
     color: white;
-    font-family: "Montserrat", serif;
+    font-family: $primary-font;
   }
 }
 

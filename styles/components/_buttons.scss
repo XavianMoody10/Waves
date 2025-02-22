@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+@mixin btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 30px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+@mixin btn--purple {
+  // display: flex;
+  // align-items: center;
+  // gap: 10px;
+  // padding: 20px 30px;
+  background-color: $purple;
+  color: white;
+  // text-decoration: none;
+  font-family: $primary-font;
+
+  &:hover {
+    background-color: #955cf0;
+  }
+}
+
+@mixin btn--purple-outline {
+  // display: flex;
+  // align-items: center;
+  // gap: 10px;
+  // padding: 20px 30px;
+  background-color: white;
+  color: $purple;
+  // text-decoration: none;
+  font-family: $primary-font;
+  // width: fit-content;
+  border: 1px solid $purple;
+
+  &:hover {
+    background-color: #955cf0;
+    color: white;
+  }
+}
+
+@mixin btn--white-outline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 30px;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-family: $primary-font;
+  width: fit-content;
+  border: 1px solid white;
+
+  &:hover {
+    background-color: white;
+    color: $purple;
+  }
+}

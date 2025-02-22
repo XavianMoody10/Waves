@@ -1,0 +1,52 @@
+@mixin sponsors-slider {
+  &__wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__track-left,
+  &__track-right {
+    display: flex;
+    gap: 20px;
+    width: 3000px;
+  }
+
+  &__track-right {
+    animation: sponsors-right-animation 8s forwards infinite linear;
+  }
+
+  &__track-left {
+    animation: sponsors-left-animation 8s forwards infinite linear;
+  }
+
+  &__sponsor {
+    border: 2px solid rgb(185, 185, 185);
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
+
+@keyframes sponsors-right-animation {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes sponsors-left-animation {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

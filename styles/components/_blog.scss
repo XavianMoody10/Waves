@@ -1,0 +1,39 @@
+@use "../abstracts/" as *;
+
+@mixin blog {
+  &__blog {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__details {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__info {
+    font-family: $primary-font;
+    color: $purple;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-family: $primary-font;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    &__blog {
+      max-width: none;
+    }
+
+    &__details {
+      margin-top: 40px;
+    }
+  }
+}

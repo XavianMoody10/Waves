@@ -1,0 +1,152 @@
+@use "../abstracts/" as *;
+
+@mixin testimony {
+  &__wrapper {
+    max-width: 1500px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #8547e950;
+    padding: 15px;
+    position: relative;
+  }
+
+  &__image {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__statement {
+    font-family: $primary-font;
+    font-weight: 500;
+  }
+
+  &__name {
+    font-family: $primary-font;
+    // font-size: 0.9rem;
+    color: $purple;
+    font-weight: 500;
+  }
+
+  &__occupation {
+    font-family: $primary-font;
+    // font-size: 0.7rem;
+    font-weight: 500;
+
+    & span {
+      font-weight: 400;
+    }
+  }
+
+  &__wavy-line {
+    position: absolute;
+    right: 15px;
+    height: 90%;
+    width: 20px;
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    &__wrapper {
+      padding: 25px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    &__image {
+      height: 250px;
+      width: 250px;
+    }
+
+    &__wrapper {
+      padding: 80px 40px;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__statement {
+      max-width: 500px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__wrapper {
+      margin-top: 100px;
+      gap: 50px;
+    }
+
+    &__body {
+      gap: 40px;
+    }
+
+    &__statement {
+      max-width: 550px;
+    }
+
+    &__wavy-line {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &__image {
+      height: 350px;
+      width: 350px;
+    }
+
+    &__body {
+      gap: 40px;
+    }
+
+    &__statement {
+      max-width: 650px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &__wrapper {
+      justify-content: center;
+    }
+  }
+}
+
+.wavy-line-vertical {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: hidden;
+
+  &__line {
+    background-image: url("/assets/vertical-wavy-line.svg");
+    background-position: bottom;
+    background-size: auto;
+    background-repeat: repeat-y;
+    width: 100%;
+    height: 1400px;
+    animation: vertical-wavy-line-animation 10s linear infinite;
+  }
+}
+
+@keyframes vertical-wavy-line-animation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-75%);
+  }
+}

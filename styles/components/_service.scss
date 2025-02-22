@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+@mixin service {
+  &__main-point {
+    font-weight: 500;
+    font-family: $primary-font;
+    color: $purple;
+  }
+
+  &__service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__info {
+    font-family: $primary-font;
+  }
+
+  &__anchor {
+    text-decoration: none;
+    font-family: $primary-font;
+    font-weight: 500;
+    color: black;
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    &__service {
+      align-items: flex-start;
+    }
+
+    &__details {
+      text-align: start;
+    }
+
+    &__anchor {
+      margin: 0;
+    }
+  }
+}
