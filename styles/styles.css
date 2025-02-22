@@ -493,6 +493,9 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.projects__subheading span {
+  position: relative;
+}
 .projects__grid {
   display: grid;
   gap: 40px 0;
